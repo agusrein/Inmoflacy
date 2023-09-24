@@ -4,3 +4,52 @@
     margin: 0px;
 }
 
+body{
+    background-image: url(../images/fondo2.jpg);
+    background-size:cover;
+    background-position: center;
+    color: white;
+}
+
+[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+.div__container--primaryDate input, .div__container--secondaryDate input,.div__container--amount input{
+    height: 50px;
+    cursor: pointer;
+    outline: none;
+    border: 3px solid rgb(142, 139, 139);
+    color: white;
+    backdrop-filter: blur(7px) saturate(9%);
+    -webkit-backdrop-filter: blur(7px) saturate(9%);
+    background-color: rgba(255, 255, 255, 0);
+}
+
+.button__apply{
+    height: 6vh;}
+h4{
+    font-family: 'Tourney', cursive;
+    text-transform: uppercase;
+    font-weight: 300;
+    font-size: 28px;
+    text-shadow:  10px 7px 19px rgba(36, 0, 0, 1);
+    
+}
+
+.div__container-dividier{
+    height: 2px;
+    border: 2px solid  rgba(142, 139, 139, 0.586);
+    width: 80vw;
+    -webkit-box-shadow: -1px 100px 166px -16px rgba(0,0,0,0.24);
+-moz-box-shadow: -1px 100px 166px -16px rgba(0,0,0,0.24);
+box-shadow: -1px 100px 166px -16px rgba(0,0,0,0.24);
+}
+
+footer{
+    height: 15vh;
+    text-shadow: 10px 7px 19px rgba(36, 0, 0, 1);
+    color: rgb(217, 214, 214);
+    font-weight: 400;
+    
+}
