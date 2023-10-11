@@ -53,3 +53,33 @@ footer{
     font-weight: 400;
     
 }
+.div__container--contact-title{backdrop-filter: blur(7px) saturate(9%);
+    -webkit-backdrop-filter: blur(7px) saturate(9%);
+    background-color: rgba(33, 57, 119, 0.834); padding-top: 20px; padding-bottom: 40px;}
+form{
+    transform: translate(0px,-30px);
+    color: white;
+    backdrop-filter: blur(7px) saturate(9%);
+    -webkit-backdrop-filter: blur(7px) saturate(9%);
+    background-color: rgba(39, 38, 38, 0.627);
+    border: 2px solid rgb(142, 139, 139);
+}
+input{height: 40px;
+    backdrop-filter: blur(7px) saturate(0%);
+    -webkit-backdrop-filter: blur(7px) saturate(0%);
+    background-color: rgba(52, 52, 53, 0.69);
+    color: white;
+    border: none;
+    border-bottom: 2px solid rgba(76, 75, 75, 0.553);
+    cursor: pointer;
+    padding-left: 10px} input::placeholder{font-size: 16px; color: rgb(200, 195, 195);} 
+textarea{height: 230px;
+    backdrop-filter: blur(7px) saturate(0%);
+    -webkit-backdrop-filter: blur(7px) saturate(0%);
+    background-color: rgba(52, 52, 53, 0.69);
+    color: white;
+    padding-left: 10px;
+    border: none;
+    border-bottom: 2px solid rgba(76, 75, 75, 0.553);
+    cursor: pointer;
+    padding-top: 5px;} textarea::placeholder{  font-size: 17px; color: rgb(200, 195, 195);}
