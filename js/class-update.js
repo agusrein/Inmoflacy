@@ -67,6 +67,9 @@ class Actualizacion {
             this.fechaEntradaDesde = DateTime.fromISO(this.fechaEntradaDesde);
             this.fechaEntradaHasta = DateTime.fromISO(this.fechaEntradaHasta);
 
+
+            console.log(`Fecha ingresada desde: ${this.fechaEntradaDesde.toString()}\nFecha ingresada hasta: ${this.fechaEntradaHasta.toString()}`);
+
             this.validarInformacion();
         })
 
@@ -94,7 +97,7 @@ class Actualizacion {
             this.limpiarInputs();
         }
 
-        else { this.filtradoDeDatos(); }
+        else { this.filtradoDeDatos();}
 
     }
 
@@ -110,15 +113,25 @@ class Actualizacion {
 
             const mesObjeto = e.mes;
             const anioObjeto = e.anio;
-
-            if ((anioObjeto > dato2 && anioObjeto < dato4) || (anioObjeto === dato2 && mesObjeto >= dato1) || (anioObjeto === dato4 && mesObjeto <= dato3)) {
+            
+            if (anioObjeto > dato2 && anioObjeto < dato4) {
                 return true;
             }
-            
-            else return false; //Filtrado de elementos del array que coincidan con las fechas ingresadas para calcular incremento
+            if (anioObjeto === dato2 && anioObjeto === dato4) {
+                return mesObjeto >= dato1 && mesObjeto <= dato3;
+            }
+            if (anioObjeto === dato2) {
+                return mesObjeto >= dato1;
+            }
+            if (anioObjeto === dato4) {
+                return mesObjeto <= dato3;
+            }
+            return false;
         });
+        console.log('Objetos que se encuentran en el rango de las fechas ingresadas:')
         console.log(objetosEnRango)
         this.indices = objetosEnRango.map((e) => e.valor) // Extraigo unicamente las propiedades valor de los objetos dentro del array
+        console.log(`Valores relevantes para calcular inflación del monto: ${this.indices}`)
 
         this.calcularNuevoImporte();
     }
@@ -133,6 +146,7 @@ class Actualizacion {
 
         amount.innerText = `$${this.importe.toLocaleString("de-DE")}`
         popUp.classList.toggle('hidden')
+        console.log(`Su importe actualizado: $${Math.round(this.importe)}`)
         this.limpiarInputs();
 
     }
