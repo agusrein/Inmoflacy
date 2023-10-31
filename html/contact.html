@@ -1,60 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
-  <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/style.css">
   <link rel="shortcut icon" href="../images/precio.png" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Fjalla+One&family=Tourney:ital,wght@0,300;0,400;0,500;1,100&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/cf2dcc4586.js" crossorigin="anonymous"></script>
   <title>Inmoflacy | Contacto</title>
 </head>
 
 <body>
-  <header class="d-flex justify-content-center w-100 mt-2">
-    <nav class="d-flex flex-row justify-content-end align-items-center col-xxl-8 col-xl-8">
-      <a class="col-6 text-start" href="../index.html">
-        <h3>Inmoflacy</h3>
-      </a>
-      <a class="nav-link fw-bold text-end col-2" href="howitworks.html">¿Como funciona?</a>
-      <a class="nav-link fw-bold text-end col-2" href="contact.html">Contacto</a>
-      <a class="nav-link fw-bold text-end col-2" href="indices.html">Indices</a>
+  <header class="d-flex justify-content-center w-100 ">
+    <nav class="d-flex flex-row justify-content-end align-items-center col-10">
+      <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 d-flex justify-content-start mt-2">
+        <a href="../index.html"><img class="ms-xxl-5 ms-xl-5 ms-lg-5 ms-1" src="../images/logo.png" alt="imagen de logo" width="220"></a>
+      </div>
+      <button class="btn__open"><i class="fa-solid fa-ellipsis-vertical"></i></button>
+      <div class="div__container--list col-xxl-6 col-xl-6 col-lg-6 ">
+      <button class="btn__close"><i class="fa-solid fa-ellipsis"></i></button>
+      <ul class="nav__list d-flex justify-content-xxl-between justify-content-xl-between justify-content-lg-between me-xl-4 me-lg-4 me-xxl-4 p-0">
+        <li class=""><a class="text-decoration-none fw-xxl-bold fw-xl-bold fw-lg-bold fw-semibold" href="../html/howitworks.html">¿Como funciona?</a></li>
+        <li class=""><a class="text-decoration-none fw-xxl-bold fw-xl-bold fw-lg-bold fw-semibold" href="../html/contact.html">Contacto</a></li>
+        <li class=""><a class="text-decoration-none fw-xxl-bold fw-xl-bold fw-lg-bold fw-semibold" href="../html/indices.html">Indices</a></li>
+      </ul>
+    </div>
     </nav>
   </header>
 
-  <div class="div__container--contact-title mt-5">
+  <div class="div__container--contact-title mt-2">
     <h2 class="text-center mb-2">¿Te quedan dudas?</h2>
-    <p class="text-center ">Escríbenos e intentaremos responderte cuanto antes sea posible</p>
+    <p class="text-center ">Escríbenos e intentaremos responderte cuanto antes sea posible.</p>
   </div>
   <div class="d-flex justify-content-center">
-    <form action="" class="d-flex flex-column p-4 pt-5 pb-5 rounded col-6 shadow-lg">
-      <div class="d-flex col-12 justify-content-between mb-3">
-        <div class="d-flex flex-column col-6 ">
-          <input class="col-11 rounded-2 shadow" type="text" id="name" placeholder="Nombre">
+    <form action="" class="d-flex flex-column p-4 pt-5 pb-5 rounded col-xxl-5 col-xl-6 col-lg-7 col-md-8 col-sm-9 col-11 shadow-lg mb-5">
+      <div class="d-flex col-12 justify-content-xxl-between justify-content-xl-between justify-content-lg-between mb-3 flex-xxl-row flex-xl-row flex-lg-row flex-md-row flex-sm-column flex-column">
+        <div class="d-flex flex-column col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+          <input class="col-xxl-11 col-xl-11 col-lg-11 col-md-11 col-sm-12 col-12 rounded-2 shadow" type="text" id="nombre" placeholder="Nombre">
         </div>
-        <div class="d-flex flex-column col-6">
-          <input class="col-11 align-self-end rounded-2 shadow" type="text" id="surname" placeholder="Apellido">
-        </div>
-      </div>
-      <div class="d-flex col-12  justify-content-between mb-3">
-        <div class="d-flex flex-column col-6 ">
-          <input class="col-11 rounded-2 shadow" type="number" id="phone" placeholder="Teléfono">
-        </div>
-        <div class="d-flex flex-column col-6 ">
-          <input class="col-11 align-self-end rounded-2 shadow" type="email" id="email" placeholder="Email">
+        <div class="mt-3 mt-sm-3 mt-md-0 mt-lg-0 mt-xl-0 mt-xxl-0 d-flex flex-column col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+          <input class="col-xxl-11 col-xl-11 col-lg-11 col-md-11 col-sm-12 col-12 align-self-xxl-end align-self-xl-end align-self-lg-end align-self-md-end rounded-2 shadow" type="text" id="apellido" placeholder="Apellido">
         </div>
       </div>
-      <textarea class="mb-3 rounded-2 shadow" name="" id="" cols="30" rows="10" placeholder="Deje aquí su mensaje"></textarea>
+      <div class="d-flex col-12  justify-content-xxl-between justify-content-xl-between justify-content-lg-between mb-3 flex-xxl-row flex-xl-row flex-lg-row flex-md-row flex-sm-column flex-column">
+        <div class="d-flex flex-column col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 ">
+          <input class="col-xxl-11 col-xl-11 col-lg-11 col-md-11 col-sm-12 col-12 rounded-2 shadow" type="number" id="telefono" placeholder="Teléfono">
+        </div>
+        <div class="mt-3 mt-sm-3 mt-md-0 mt-lg-0 mt-xl-0 mt-xxl-0 d-flex flex-column col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 ">
+          <input class="col-xxl-11 col-xl-11 col-lg-11 col-md-11 col-sm-12 col-12 align-self-xxl-end align-self-xl-end align-self-lg-end align-self-md-end rounded-2 shadow" type="email" id="correo" placeholder="Email">
+        </div>
+      </div>
+      <textarea class="mb-3 rounded-2 shadow" name="" id="mensaje" cols="30" rows="10" placeholder="Deje aquí su mensaje"></textarea>
       <input type="submit" name="" id="" class=" rounded-2 btn btn-secondary shadow">
     </form>
   </div>
+  
+  <div class="d-flex justify-content-center mt-5">
+    <div class="div__container-dividier rounded-pill shadow-lg"></div>
+  </div>
+  <footer class="d-flex justify-content-center align-items-center">
+    <span>&copy; Inmoflacy, Inc. All Rights Reserved. AR</span>
+  </footer>
 
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
-    crossorigin="anonymous"></script>
-  <!-- <script src="../js/main.js"></script> -->
+  integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+  crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/luxon@3.4.3/build/global/luxon.min.js"></script>
+  <script src="../js/events.js"></script>
+  <script src="../js/class-update.js"></script>
+  <script src="../js/main.js"></script>
+  
+  
 </body>
 
 </html>

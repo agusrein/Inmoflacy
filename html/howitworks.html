@@ -1,27 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="shortcut icon" href="../images/precio.png" type="image/x-icon">
-    <title>Inmoflacy | ¿Como funciona? </title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="shortcut icon" href="../images/precio.png" type="image/x-icon">
+  <script src="https://kit.fontawesome.com/cf2dcc4586.js" crossorigin="anonymous"></script>
+  <title>Inmoflacy | ¿Como funciona? </title>
 </head>
+
 <body>
-    <header class="d-flex justify-content-center w-100 mt-2">
-        <nav class="d-flex flex-row justify-content-end align-items-center col-xxl-8 col-xl-8">
-          <a class="col-6 text-start" href="../index.html"><h3>Inmoflacy</h3></a>
-          <a class="nav-link fw-bold text-end col-2" href="howitworks.html">¿Como funciona?</a>
-          <a class="nav-link fw-bold text-end col-2" href="contact.html">Contacto</a>
-          <a class="nav-link fw-bold text-end col-2" href="indices.html">Indices</a>
-        </nav>
-      </header>
-    
-      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+  <header class="d-flex justify-content-center w-100 ">
+    <nav class="d-flex flex-row justify-content-end align-items-center col-10">
+      <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 d-flex justify-content-start mt-2">
+        <a href="../index.html"><img class="ms-xxl-5 ms-xl-5 ms-lg-5 ms-1" src="../images/logo.png" alt="imagen de logo"
+            width="220"></a>
+      </div>
+      <button class="btn__open"><i class="fa-solid fa-ellipsis-vertical"></i></button>
+      <div class="div__container--list col-xxl-6 col-xl-6 col-lg-6 ">
+        <button class="btn__close"><i class="fa-solid fa-ellipsis"></i></button>
+        <ul
+          class="nav__list d-flex justify-content-xxl-between justify-content-xl-between justify-content-lg-between me-xl-4 me-lg-4 me-xxl-4 p-0">
+          <li class=""><a class="text-decoration-none fw-xxl-bold fw-xl-bold fw-lg-bold fw-semibold"
+              href="../html/howitworks.html">¿Como funciona?</a></li>
+          <li class=""><a class="text-decoration-none fw-xxl-bold fw-xl-bold fw-lg-bold fw-semibold"
+              href="../html/contact.html">Contacto</a></li>
+          <li class=""><a class="text-decoration-none fw-xxl-bold fw-xl-bold fw-lg-bold fw-semibold"
+              href="../html/indices.html">Indices</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+  <main>
+    <div class="d-flex mt-5 flex-wrap">
+      <div
+        class="col-xxl-6 col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 div__container--howitworks d-flex justify-content-center flex-column align-items-center shadow-lg">
+        <h2 class="col-xxl-10 col-xl-10 col-lg-10 col-md-10 col-sm-10 col-11 text-center mb-5 mt-5 pt-5">¿Queres saber
+          que tan cercano es el <span class="fs-2 div__container--title-modifier1 fw-semibold">cálculo</span> de nuestra
+          <span class="fs-2 div__container--title-modifier2 fw-semibold">aplicación?</span></h2>
+        <p class="col-xxl-8 col-xl-8 col-lg-8 col-md-8 col-sm-10 col-12 fs-5 p-3 mb-5 pb-5">Te mostramos con esta breve
+          guía como realizamos nuestro procedimiento:</p>
+      </div>
+      <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 d-flex flex-wrap">
+        <div class="col-xxl-6 col-xl-6 col-lg-6 con md-6 col-sm-12 col-12 ">
+          <p class="mt-4 mb-3 ms-3 span__container--icon rounded-2 shadow-lg d-flex justify-content-center"><i
+              class="d-flex align-items-center fa-regular fa-calendar"></i></p>
+          <h5 class="ms-3">Recibimos tus datos.</h5>
+          <p class="ms-3 me-4">Solo necesitamos que ingreses desde qué fecha fue tu ultima actualización, si no has
+            tenido, la fecha de inicio de contrato, hasta qué fecha quisieras saber la actualización, y por último el
+            importe que abonas actualmente. </p>
+        </div>
+        <div class="col-xxl-6 col-xl-6 col-lg-6 con md-6 col-sm-12 col-12">
+          <p class="mt-4 mb-3 ms-3 span__container--icon rounded-2 shadow-lg d-flex justify-content-center"><i
+              class="d-flex align-items-center fa-solid fa-building-columns"></i></p>
+          <h5 class="ms-3">Obtenemos información del BCRA.</h5>
+          <p class="ms-3 me-4">Internamente contamos con indices oficiales brindados por el Banco Central de la
+            República Argentina.</p>
+        </div>
+        <div class="col-xxl-6 col-xl-6 col-lg-6 con md-6 col-sm-12 col-12">
+          <p class="mt-4 mb-3 ms-3 span__container--icon rounded-2 shadow-lg d-flex justify-content-center"><i
+              class="d-flex align-items-center fa-solid fa-magnifying-glass-dollar"></i></p>
+          <h5 class="ms-3">Filtrado de datos.</h5>
+          <p class="ms-3 me-4">Nos interesan puntualmente los porcentajes de inflación que obtuvimos anteriormente, pero
+            que coincidan con las fechas que ingreses..</p>
+        </div>
+        <div class="col-xxl-6 col-xl-6 col-lg-6 con md-6 col-sm-12 col-12">
+          <p class="mt-4 mb-3 ms-3 span__container--icon rounded-2 shadow-lg d-flex justify-content-center"><i
+              class="d-flex align-items-center fa-solid fa-calculator"></i></p>
+          <h5 class="ms-3">Calculámos.</h5>
+          <p class="ms-3 me-4 mb-3">Ahora si! Con toda la informacion relevante que obtuvimos para tu caso, podremos
+            realizar el cálculo del importe aproximado que sufrirá tu locación, hasta la corriente fecha.</p>
+        </div>
+      </div>
+    </div>
+
+  </main>
+  <div class="d-flex justify-content-center mt-5">
+    <div class="div__container-dividier rounded-pill shadow-lg"></div>
+  </div>
+  <footer class="d-flex justify-content-center align-items-center">
+    <span>&copy; Inmoflacy, Inc. All Rights Reserved. AR</span>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
     crossorigin="anonymous"></script>
-  <!-- <script src="../js/main.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/luxon@3.4.3/build/global/luxon.min.js"></script>
+    <script src="../js/events.js"></script>
+    <script src="../js/class-update.js"></script>
+    <script src="../js/main.js"></script>
 </body>
+
 </html>
