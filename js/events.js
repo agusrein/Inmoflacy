@@ -19,6 +19,14 @@ listElements.forEach(listElement =>{
    })
 }) //Evento aplicado a menu desplegable, página Indices.
 
+let btnApply = document.querySelector('.button__apply')
+        btnApply.addEventListener('click', () =>{
+         let actualizacion = new Actualizacion
+         actualizacion.creacionDeIndices()
+         actualizacion.crearFechas()
+         actualizacion.pedirInformacion()
+        }) //Evento Instanciador
+
 let btnPopUpClose = document.querySelector('.btn__popUp-close')
 let popUp = document.querySelector('.div__container--popUp')
 

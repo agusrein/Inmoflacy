@@ -45,7 +45,7 @@ class Actualizacion {
             { mes: 9, anio: 2023, valor: 5.61 },
             { mes: 10, anio: 2023, valor: 5.64 },
             { mes: 11, anio: 2023, valor: 5.67 },
-           
+
         ]
     }
 
@@ -57,47 +57,101 @@ class Actualizacion {
 
     pedirInformacion() {
 
+        this.fechaEntradaDesde = document.getElementById('from').value;
+        this.fechaEntradaHasta = document.getElementById('to').value;
+        this.importe = document.getElementById('amount').value;
 
-        let btnApply = document.querySelector('.button__apply')
-        btnApply.addEventListener('click', () => {
-            this.crearFechas();
-            this.fechaEntradaDesde = document.getElementById('from').value;
-            this.fechaEntradaHasta = document.getElementById('to').value;
-            this.importe = document.getElementById('amount').value;
-            this.fechaEntradaDesde = DateTime.fromISO(this.fechaEntradaDesde);
-            this.fechaEntradaHasta = DateTime.fromISO(this.fechaEntradaHasta);
-
-
-            console.log(`Fecha ingresada desde: ${this.fechaEntradaDesde.toString()}\nFecha ingresada hasta: ${this.fechaEntradaHasta.toString()}`);
-
-            this.validarInformacion();
-        })
-
+        this.validarInformacion();
     }
 
     validarInformacion() {
-        document.getElementById('errorFrom').innerText = '';
-        document.getElementById('errorTo').innerText = '';
-        document.getElementById('errorAmount').innerText = '';
+        this.fechaEntradaDesde = DateTime.fromISO(this.fechaEntradaDesde);
+        this.fechaEntradaHasta = DateTime.fromISO(this.fechaEntradaHasta);
 
-        if ((this.fechaEntradaDesde < this.fechaInicio) || (this.fechaEntradaDesde > this.fechaActual)) {
-            document.getElementById('errorFrom').innerText = 'Error.Datos desde 2021 hasta la actualidad.';
-            this.limpiarInputs();
+        if (this.fechaEntradaDesde < this.fechaInicio) {
+            document.getElementById('errorFrom').innerText = 'Los datos son a partir del 2021.';
+            document.getElementById('from').value = '';
+            do {addEventListener('keydown',() => {document.getElementById('errorFrom').innerText = '';})
+                addEventListener('input',() => {
+                document.getElementById('from').value;
+                })
+                this.fechaEntradaDesde = document.getElementById('from').value;
+                this.fechaEntradaDesde = DateTime.fromISO(this.fechaEntradaDesde);
+            }
+            while (this.fechaEntradaDesde > this.fechaInicio) // Corrobora que la primer fecha no sea anterior a la que tenemos de datos en el array
         }
+        else if (this.fechaEntradaDesde > this.fechaActual) {
+            document.getElementById('errorFrom').innerText = 'No puede ingresar una fecha futura.';
+            document.getElementById('from').value = '';
+            do {addEventListener('keydown',() => {document.getElementById('errorFrom').innerText = '';})
+                addEventListener('input',() => {
+                document.getElementById('from').value;
+                })
+                this.fechaEntradaDesde = document.getElementById('from').value;
+                this.fechaEntradaDesde = DateTime.fromISO(this.fechaEntradaDesde);
+            }
+            while(this.fechaEntradaDesde < this.fechaActual) // Corrobora que la primer fecha no sea posterior a la fecha de hoy en la actualidad.
+        }   
+        
         else if (this.fechaEntradaHasta < this.fechaEntradaDesde) {
-            document.getElementById('errorTo').innerText = 'La fecha de inicio no puede ser menor';
-            this.limpiarInputs();
+            document.getElementById('errorTo').innerText = 'La fecha de inicio no puede ser mayor.';
+            document.getElementById('to').value = '';
+            do {addEventListener('keydown',() => {document.getElementById('errorTo').innerText = '';})
+                addEventListener('input',() => {
+                document.getElementById('to').value;
+                })
+                this.fechaEntradaHasta = document.getElementById('to').value;
+                this.fechaEntradaHasta = DateTime.fromISO(this.fechaEntradaHasta);
+            }
+            while (this.fechaEntradaHasta > this.fechaEntradaDesde) // Corrobora que la segunda fecha no sea menor a la primer fecha
+            
         }
-        else if ((this.fechaEntradaHasta > this.fechaActual) || (this.fechaEntradaHasta < this.fechaInicio)) {
-            document.getElementById('errorTo').innerText = 'Error.Datos desde 2021 hasta la actualidad.';
-            this.limpiarInputs();
+        else if (this.fechaEntradaHasta > this.fechaActual) {
+            document.getElementById('errorTo').innerText = 'No puede ingresar una fecha futura.';
+            document.getElementById('to').value = '';
+            do {addEventListener('keydown',() => {document.getElementById('errorTo').innerText = '';})
+                addEventListener('input',() => {
+                document.getElementById('to').value;
+                })
+                this.fechaEntradaHasta = document.getElementById('to').value;
+                this.fechaEntradaHasta = DateTime.fromISO(this.fechaEntradaHasta);
+            }
+            while (this.fechaEntradaHasta > this.fechaActual) // Corrobora que la segunda fecha no sea posterior a la de hoy en la actualidad
+            
+            
+        }
+        else if (this.fechaEntradaHasta < this.fechaInicio) {
+            document.getElementById('errorTo').innerText = 'Los datos son a partir del 2021.';
+            document.getElementById('to').value = '';
+            do {addEventListener('keydown',() => {document.getElementById('errorTo').innerText = '';})
+                addEventListener('input',() => {
+                document.getElementById('to').value;
+                })
+                this.fechaEntradaHasta = document.getElementById('to').value;
+                this.fechaEntradaHasta = DateTime.fromISO(this.fechaEntradaHasta);
+            }
+            while (this.fechaEntradaHasta > this.fechaInicio) // Corrobora que la segunda fecha no sea menor a la fecha en que tenemos datos en el array
+            
         }
         else if (this.importe <= 0) {
             document.getElementById('errorAmount').innerText = 'El importe no puede ser menor o igual a 0';
-            this.limpiarInputs();
+            do {addEventListener('keydown',() => {document.getElementById('errorAmount').innerText = '';})
+                addEventListener('input',() => {
+                document.getElementById('amount').value;
+                })
+                this.importe = document.getElementById('amount').value;
+                
+            }
+            while(this.importe > 0) // Corrobora que el importe nunca sea menor o igual a 0
         }
+        else if (!this.fechaEntradaDesde.isValid||!this.fechaEntradaHasta.isValid){
+            this.limpiarInputs()
+            this.pedirInformacion()} //Si las fechas no son validas que el programa no continue al vaciarse los inputs y vuelva a empezar
 
-        else { this.filtradoDeDatos();}
+        else{
+            console.log(`Fecha ingresada desde: ${this.fechaEntradaDesde.toLocaleString(DateTime.DATE_SHORT)}\nFecha ingresada hasta: ${this.fechaEntradaHasta.toLocaleString(DateTime.DATE_SHORT)}`);
+            this.filtradoDeDatos()}
+  
 
     }
 
@@ -109,11 +163,11 @@ class Actualizacion {
         let dato4 = this.fechaEntradaHasta.year;
 
 
-        let objetosEnRango = this.indices.filter((e) => {
+        let objetosEnRango = this.indices.filter((e) => { //Del array de objetos Indices, crea un nuevo array unicamente con los datos que coincidan con las fechas ingresadas
 
             const mesObjeto = e.mes;
             const anioObjeto = e.anio;
-            
+
             if (anioObjeto > dato2 && anioObjeto < dato4) {
                 return true;
             }
@@ -137,18 +191,16 @@ class Actualizacion {
     }
 
     calcularNuevoImporte() {
-        let valor1 = this.indices[0]  //Tomo el primer valor del array filtrado
-        let valor2 = this.indices[this.indices.length - 1] //Tomo el ultimo valor del array filtrado
-        this.importe = (valor2 / valor1) * this.importe;
+        let valor1 = this.indices[0]  //Tomo el primer valor del array mapeado
+        let valor2 = this.indices[this.indices.length - 1] //Tomo el ultimo valor del array mapeado
+        this.importe = (valor2 / valor1) * this.importe; // Procedo a dividir el ultimo indice por el primer indice, y se multiplica por el importe ingresado
 
         let popUp = document.querySelector('.div__container--popUp')
         let amount = document.querySelector('.amount')
-
-        amount.innerText = `$${this.importe.toLocaleString("de-DE")}`
+        amount.innerText = `$${this.importe.toLocaleString("de-DE")}` // Muestro el resultado en una card emergente
         popUp.classList.toggle('hidden')
-        console.log(`Su importe actualizado: $${Math.round(this.importe)}`)
+        console.log(`Su importe actualizado: $${(Math.round(this.importe))}`)
         this.limpiarInputs();
-
     }
     limpiarInputs() {
         document.getElementById('from').value = '';
@@ -159,4 +211,3 @@ class Actualizacion {
         this.fechaEntradaHasta = DateTime.fromISO();
     }
 }
-
