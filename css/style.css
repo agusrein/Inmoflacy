@@ -11,6 +11,7 @@ body{
     background-attachment: fixed;
     color: white;
     height: 100vh;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
 
 .nav__list li {list-style-type: none;}
@@ -88,6 +89,7 @@ h4{
     font-size: 28px;
     text-shadow:  10px 7px 19px rgba(36, 0, 0, 1);
 }
+p{font-size: 17px;}
 .p__message{color: rgb(244, 44, 13); font-size: 17px;}
 .grid__container{
     display: grid;
@@ -121,9 +123,11 @@ footer{
     background-color: rgba(43, 42, 42, 0.959);
     
 }
-.div__container--contact-title{backdrop-filter: blur(7px) saturate(9%);
+.div__container--contact-title{
+    backdrop-filter: blur(7px) saturate(9%);
     -webkit-backdrop-filter: blur(7px) saturate(9%);
     background-color: rgba(95, 16, 232, 0.834); padding-top: 20px; padding-bottom: 40px;}
+
 form{
     transform: translate(0px,-30px);
     color: white;
@@ -161,8 +165,8 @@ textarea{height: 230px;
     padding-top: 5px;} textarea::placeholder{  font-size: 17px; color: rgb(200, 195, 195);}
 
 
-    .div__container--indices h4,.div__container--indices p{color:white; font-family: var(--bs-body-font-family);}
-    .div__container--indices h4::first-letter{text-transform: uppercase;}
+    .div__container--indices h2,.div__container--indices p{color:white;}
+    .div__container--indices h2::first-letter{text-transform: uppercase;}
     .list__button button{
         height: 60px;
         font-family: 'Archivo Black', sans-serif;
@@ -171,6 +175,11 @@ textarea{height: 230px;
         color: white;
        background-color: rgb(73, 71, 71);
        transition-duration: 0.5s;
+    }
+    .div__container--indices{
+    backdrop-filter: blur(7px) saturate(9%);
+    -webkit-backdrop-filter: blur(7px) saturate(9%);
+    background-color: rgba(232, 30, 16, 0.834); padding-top: 20px; padding-bottom: 40px;
     }
     
     
@@ -225,7 +234,6 @@ background-color: rgba(39, 38, 38, 0.627);
 color: white;
 border: 3px solid rgb(142, 139, 139);
 z-index: 4;
-
 }
 .div__container--card-popUp p{ color: rgb(234, 223, 223);}
 .btn__popUp-close{
@@ -236,3 +244,14 @@ background-color: rgba(212, 59, 28, 0.954);}
 .amount{font-size: 50px; color: rgb(244, 191, 14);text-shadow: 6px 14px 15px rgba(0,0,0,0.75);}
 .hidden{opacity: 0;visibility: hidden;}
 .btn__popUp-close i{font-size: 26px; margin-top: 4px;}
+.div__container--registres{
+    backdrop-filter: blur(7px) saturate(9%);
+    -webkit-backdrop-filter: blur(7px) saturate(9%);
+    background-color: rgba(39, 38, 38, 0.627);
+}
+.btn__delete--register{height: 35px;background-color: rgba(232, 30, 16, 0.834) ;}
+.div__container-dividier--modifier{
+    width:80%;
+    height: 2px;
+    border: 2px solid  rgba(142, 139, 139, 0.586);}
+tr{height: 35px;} li{list-style: none;}
