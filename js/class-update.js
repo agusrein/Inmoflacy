@@ -1,5 +1,5 @@
 class Actualizacion {
-    constructor(fechaEntradaDesde, fechaEntradaHasta, importe, indices, indicesFilter, fechaActual, fechaInicio, importeActualizado, registros) {
+    constructor(fechaEntradaDesde, fechaEntradaHasta, importe, indices, indicesFilter, uniqueKey, fechaActual, fechaInicio, importeActualizado, registros) {
         this.fechaEntradaDesde = fechaEntradaDesde;
         this.fechaEntradaHasta = fechaEntradaHasta;
         this.importe = importe;
@@ -9,6 +9,7 @@ class Actualizacion {
         this.fechaActual = fechaActual;
         this.importeActualizado = importeActualizado;
         this.registros = registros;
+        this.uniqueKey = uniqueKey;
     }
 
     datosRelevantes() {
@@ -46,8 +47,8 @@ class Actualizacion {
             { mes: 7, anio: 2023, valor: 4.91 },
             { mes: 8, anio: 2023, valor: 5.25 },
             { mes: 9, anio: 2023, valor: 5.61 },
-            { mes: 10, anio: 2023, valor: 5.64 },
-            { mes: 11, anio: 2023, valor: 5.67 },
+            { mes: 10, anio: 2023, valor: 6.07 },
+            { mes: 11, anio: 2023, valor: 6.35 },
         ]
         this.fechaActual = DateTime.now();
         this.fechaInicio = DateTime.fromISO('2021-01-01');
@@ -150,8 +151,8 @@ class Actualizacion {
             while (this.importe > 0) { document.getElementById('errorAmount').innerText = ''; } // Corrobora que el importe nunca sea menor o igual a 0
         }
         else if (!this.fechaEntradaDesde.isValid || !this.fechaEntradaHasta.isValid) {
-            document.getElementById('errorFrom').innerText = 'Error en validación de fechas';
-            document.getElementById('errorTo').innerText = 'Error en validación de fechas';
+            document.getElementById('errorFrom').innerText = 'Ingrese una fecha válida';
+            document.getElementById('errorTo').innerText = 'Ingrese una fecha válida';
             this.limpiarInputs()
             this.pedirInformacion()
         } //Si las fechas no son validas que el programa no continue al vaciarse los inputs y vuelva a empezar
@@ -224,35 +225,54 @@ class Actualizacion {
         this.fechaEntradaHasta = DateTime.fromISO();
     }
     crearRegistro() {
-        let porcentaje = (this.importeActualizado / this.importe) * 100;
+        let porcentaje = ((this.importeActualizado-this.importe) / this.importe) *100; //Porcentaje de incremento
+  
+        this.uniqueKey = `registro: ${DateTime.now().toFormat('dd/MM HH:mm:ss')}hs`;
         this.registros.push({
             periodoIngresado: `${this.fechaEntradaDesde.toFormat('MM/yyyy')}-${this.fechaEntradaHasta.toFormat('MM/yyyy')}`,
-            importe: `${Math.round(this.importe)}`,
-            actualizacion: `${Math.round(this.importeActualizado)}`,
-            porcentaje: `${Math.floor(porcentaje)}`
+            importe: `${Math.round(this.importe).toLocaleString("de-DE")}`,
+            actualizacion: `${Math.round(this.importeActualizado).toLocaleString("de-DE")}`,
+            porcentaje: `${Math.floor(porcentaje)}`,
+            id: `${this.uniqueKey}`
         })
-        this.setStorage();
-    }
-    setStorage() {
-        const set = (key, value) => { localStorage.setItem(key, value) }
-        for (let registro of this.registros) {
-            const uniqueKey = `registro: ${DateTime.now().toFormat('dd/MM HH:mm:ss')}hs`;
-            set(uniqueKey, JSON.stringify(registro));
 
-        };
-        set('registros', JSON.stringify(this.registros))
+        this.setStorage('registros', JSON.stringify(this.registros))
     }
+
+    setStorage(key, value) {
+        localStorage.setItem(key, value)
+    }
+
+
     mostrarRegistros() {
-        this.registros = JSON.parse(localStorage.getItem('registros')) || [] // Para que no se me sobreescriban los datos, en caso que no haya registros, que esté vacio.
+        this.registros = JSON.parse(localStorage.getItem('registros')) || [] // En caso que no haya registros, que esté vacio.
+    
         
-        this.registros.length > 0 && document.getElementById('message__register').remove() // Si he hecho algun registro que me borre el elemento que me dice que no se encuentran registros.
-        
-            let lista = document.getElementById('register__list')
-            for (let i = 0; i < this.registros.length; i++) {
-                let registro = this.registros[i]
-                let listItem = document.createElement('li')
-                listItem.className = 'd-flex flex-column align-items-center'
-                listItem.innerHTML = `<table class="col-10 ms-3 me-3 ms-xxl-5 me-xxl-5 ms-xl-5 me-xl-5 ms-lg-5 me-lg-5 ms-md-5 me-md-5 ms-sm-5 me-sm-5">
+        const verificacion = (registros) => {
+            if (registros.length === 0) {
+                let message = document.getElementById('message__register')
+                if(message){
+                message.innerText = 'No se encuentran registros.'}
+            }
+        }
+
+        function eliminarElemento(idUnico) { //Funcion que elimina elemento registrado del array y me actualiza el storage
+            const storageData = JSON.parse(localStorage.getItem('registros'));
+            const index = storageData.findIndex(registro => registro.id === idUnico);
+
+            if (index !== -1) {
+                storageData.splice(index, 1); // Elimina el elemento del array
+                localStorage.setItem('registros', JSON.stringify(storageData)); // Actualiza el localStorage
+                verificacion(storageData)
+            }
+        }
+
+        let lista = document.getElementById('register__list') // <ul>
+        for (let i = 0; i < this.registros.length; i++) { // Creo cada registro realizado y guardado en storage
+            let registro = this.registros[i] // El array se compone de objetos, defino variable para c/u
+            let listItem = document.createElement('li')
+            listItem.className = 'd-flex flex-column align-items-center'
+            listItem.innerHTML = `<table class="col-10 ms-3 me-3 ms-xxl-5 me-xxl-5 ms-xl-5 me-xl-5 ms-lg-5 me-lg-5 ms-md-5 me-md-5 ms-sm-5 me-sm-5">
             <tbody>
             <tr>
               <td class="col-6">Período Ingresado</td>
@@ -260,11 +280,11 @@ class Actualizacion {
             </tr>
             <tr>
               <td class="col-6">Importe</td>
-              <td class="text-end col-6">${registro.importe}</td>
+              <td class="text-end col-6">$ ${registro.importe}</td>
             </tr>
             <tr>
               <td class="col-6">Actualización</td>
-              <td class="text-end col-6">${registro.actualizacion}</td>
+              <td class="text-end col-6">$ ${registro.actualizacion}</td>
             </tr>
             <tr>
               <td class="col-6">Promedio Inflacionario</td>
@@ -272,13 +292,25 @@ class Actualizacion {
             </tr>
             <tr>
               <td class="col-6"></td>
-              <td class="text-end w-100"><button class="text-center btn btn-danger rounded-circle btn__delete--register"><i class="fa-solid fa-trash-can" style="color: #090e16;"></i></button></td>
+              <td class="text-end w-100"><button class="text-center btn btn-danger rounded-circle btn__delete--register${i}"><i class="fa-solid fa-trash-can" style="color: #090e16;"></i></button></td>
             </tr>
           </tbody>
           </table>         
           <div class="div__container-dividier--modifier rounded-pill align-self-center mb-3 mt-4"></div>`
-                if (lista) { lista.appendChild(listItem) }
+
+            if (lista) { lista.appendChild(listItem) }
+
+            let btnDelete = document.querySelector(`.btn__delete--register${i}`) 
+            if (btnDelete) {
+                btnDelete.style.height = '35px'
+                btnDelete.style.background = 'rgba(232, 30, 16, 0.834)'
+                btnDelete.addEventListener('click', () => { //Evento que elimina el registro seleccionado
+                    const idUnico = this.registros[i].id;
+                    eliminarElemento(idUnico);
+                    lista.removeChild(listItem);
+                });
             }
-        
+        }
+        verificacion(this.registros) //funcion que corrobora que no haya registros y muestra un mensaje en su defecto
     }
 }

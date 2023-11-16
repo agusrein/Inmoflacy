@@ -104,6 +104,7 @@ p{font-size: 17px;}
 @media screen and (min-width:340px) and (max-width: 560px){
     .grid__container--img{grid-area: abajo; justify-self: center;width: 80vw; margin-top: 0px !important; padding-top: 0px !important; }
     .grid__container--div{grid-area: arriba; z-index: 1;justify-self:center ;}
+    #anualInflation {font-size: 45px !important; }
 }
 
 .div__container-dividier{
@@ -232,7 +233,7 @@ backdrop-filter: blur(7px) saturate(9%);
 -webkit-backdrop-filter: blur(7px) saturate(9%);
 background-color: rgba(39, 38, 38, 0.627);
 color: white;
-border: 3px solid rgb(142, 139, 139);
+border: 3.3px solid rgb(142, 139, 139);
 z-index: 4;
 }
 .div__container--card-popUp p{ color: rgb(234, 223, 223);}
@@ -249,9 +250,11 @@ background-color: rgba(212, 59, 28, 0.954);}
     -webkit-backdrop-filter: blur(7px) saturate(9%);
     background-color: rgba(39, 38, 38, 0.627);
 }
-.btn__delete--register{height: 35px;background-color: rgba(232, 30, 16, 0.834) ;}
+
 .div__container-dividier--modifier{
     width:80%;
     height: 2px;
     border: 2px solid  rgba(142, 139, 139, 0.586);}
 tr{height: 35px;} li{list-style: none;}
+
+#anualInflation{font-size: 65px;}
