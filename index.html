@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <link
     href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Fjalla+One&family=Tourney:ital,wght@0,300;0,400;0,500;1,100&display=swap"
     rel="stylesheet">
@@ -40,9 +41,9 @@
   <main>
     <div class="d-xxl-flex d-xl-flex d-lg-flex justify-content-center grid__container w-100">
       <img class="ms-2 mt-5 pt-5 grid__container--img img_fluid" src="images/imgindex.png" width="480"
-        alt="imagen en contexto a la página">
+        alt="imagen en contexto a la página" data-aos="fade-right" data-aos-duration="1200">
       <div
-        class="col-xxl-6 col-xl-6 col-lg-6 col-md-10 col-sm-11 col-12 d-flex flex-column align-items-center grid__container--div">
+        class="col-xxl-6 col-xl-6 col-lg-6 col-md-10 col-sm-11 col-12 d-flex flex-column align-items-center grid__container--div" data-aos="fade-up" data-aos-duration="1200">
         <h1 class="pt-5">Calculá tu nueva tarifa</h1>
         <p class="pt-3 m-0 col-10 text-center">Te ayudamos a calcular la actualización aproximada de tu locación.</p>
         <p class="text-center col-10">Para que podamos estimar tu valor al mes corriente, ingresá la fecha de tu último
@@ -101,7 +102,10 @@
   <footer class="d-flex justify-content-center align-items-center">
     <span>&copy; Inmoflacy, Inc. All Rights Reserved. AR</span>
   </footer>
-
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init(); 
+  </script>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"

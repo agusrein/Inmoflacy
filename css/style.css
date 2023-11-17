@@ -183,7 +183,7 @@ textarea{height: 230px;
     background-color: rgba(232, 30, 16, 0.834); padding-top: 20px; padding-bottom: 40px;
     }
     
-    
+    .div__container--button-modifier{overflow: hidden;}
     .list__button button:hover{
         -webkit-box-shadow: 0px 0px 47px 0px rgba(0,0,0,0.75);
         -moz-box-shadow: 0px 0px 47px 0px rgba(0,0,0,0.75);

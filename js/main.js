@@ -7,11 +7,11 @@ setTimeout(() => {
 
 
 // ***********************IMPORTANTE***********************
-// Solo pude hacer uso de la API oficial del BCRA con una extension en el navegador llamada CORS Unblock, ya que por protocolos de seguridad me tiraba error 'Cors' al querer acceder, de hecho los sigue mostrando si no se cuenta con esa extensión.
+// Solo pude hacer uso de la API oficial del BCRA con una extension en el navegador llamada CORS Unblock, ya que por protocolos de seguridad me tiraba error 'Cors' al querer acceder, de hecho los sigue mostrando si no se cuenta con esa extensión. Tambien tiene un limite de 100 consultas, por ende si se refresca la pagina demasiadas veces dejará de funcionar. La informacion se ve reflejada en la página registros/indices.html.
 
 fetch('https://api.estadisticasbcra.com/inflacion_interanual_oficial', {
     headers: {
-        Authorization: 'BEARER eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MzE2Mjc3NzMsInR5cGUiOiJleHRlcm5hbCIsInVzZXIiOiJhZ3VzcmVpbmFsZGkxMEBnbWFpbC5jb20ifQ.Ma03O3XxKWHSvfDLJmER4tnB9HaiZIM5VOeKMOLp9dHJAymwd7O3BIf1rd9-BlAU1fg7unF7IW5dwIC4qfpP6g',
+        Authorization: 'BEARER eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MzE3OTg3NDIsInR5cGUiOiJleHRlcm5hbCIsInVzZXIiOiJhZ3VzcmVpbmFsZGkxMEBnbWFpbC5jb20ifQ.9npVa-7F3sHROlhS_9-Fhnj9ogS5YQ6euPR0SpqkeUYFC6lurxYd0FIPW-g1rEz1su2ZfwwVw3WT-mUHQamdfQ',
     },
 })
     .then((response) => response.json())
@@ -21,6 +21,8 @@ fetch('https://api.estadisticasbcra.com/inflacion_interanual_oficial', {
         let divInflacion = document.createElement('div')
         if(divContainer&&divInflacion){
         divInflacion.className = 'col-xxl-6 col-xl-6 col-lg-6 col-11 div__container--registres pt-4 pb-4 mt-5 rounded-3 shadow-lg d-flex flex-column ms-xxl-3 ms-xl-3 ms-lg-3'
+        divInflacion.setAttribute('data-aos','zoom-out-down');
+        divInflacion.setAttribute('data-aos-duration','1000');
         divInflacion.innerHTML = `
                 <h5 class="text-center m-0 fs-3 mb-sm-3 mb-3 mb-md-0 mb-xl-0 mb-lg-0 mb-xxl-0">Inflacion Interanual</h5>
                 <div class="d-flex col-12 justify-content-evenly align-items-center">
