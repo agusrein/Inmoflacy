@@ -18,12 +18,12 @@ listElements.forEach(listElement => {
    })
 }) //Evento aplicado a menu desplegable, página Indices.
 
-let btnApply = document.querySelector('.button__apply')
-if (btnApply) {
-   btnApply.addEventListener('click', () => {
-      actualizacion.pedirInformacion()
-   });
-} //Evento que inicializa el programa
+// let btnApply = document.querySelector('.button__apply')
+// if (btnApply) {
+//    btnApply.addEventListener('click', () => {
+//       actualizacion.pedirInformacion()
+//    });
+// } //Evento que inicializa el programa
 
 let btnPopUpClose = document.querySelector('.btn__popUp-close')
 let popUp = document.querySelector('.div__container--popUp')

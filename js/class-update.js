@@ -1,3 +1,4 @@
+
 class Actualizacion {
     constructor(fechaEntradaDesde, fechaEntradaHasta, importe, indices, indicesFilter, uniqueKey, fechaActual, fechaInicio, importeActualizado, registros) {
         this.fechaEntradaDesde = fechaEntradaDesde;
@@ -48,7 +49,32 @@ class Actualizacion {
             { mes: 8, anio: 2023, valor: 5.25 },
             { mes: 9, anio: 2023, valor: 5.61 },
             { mes: 10, anio: 2023, valor: 6.07 },
-            { mes: 11, anio: 2023, valor: 6.35 },
+            { mes: 11, anio: 2023, valor: 6.67 },
+            { mes: 12, anio: 2023, valor: 6.69 },
+            { mes: 1, anio: 2024, valor: 8.11 },
+            { mes: 2, anio: 2024, valor: 9.11 },
+            { mes: 3, anio: 2024, valor: 10.74 },
+            { mes: 4, anio: 2024, valor: 12.34 },
+            { mes: 5, anio: 2024, valor: 13.90 },
+            { mes: 6, anio: 2024, valor: 15.60 },
+            { mes: 7, anio: 2024, valor: 17.07 },
+            { mes: 8, anio: 2024, valor: 18.02 },
+            { mes: 9, anio: 2024, valor: 18.96 },
+            { mes: 10, anio: 2024, valor: 19.86 },
+            { mes: 11, anio: 2024, valor: 20.62 },
+            { mes: 12, anio: 2024, valor: 21.51 },
+            { mes: 1, anio: 2025, valor: 22.30 },
+            { mes: 2, anio: 2025, valor: 22.82 },
+            { mes: 3, anio: 2025, valor: 23.40 },
+            { mes: 4, anio: 2025, valor: 24.19 },
+            { mes: 5, anio: 2025, valor: 25.16 },
+            { mes: 6, anio: 2025, valor: 26.00 },
+            { mes: 7, anio: 2025, valor: 26.60 },
+            { mes: 8, anio: 2025, valor: 27.12 },
+            { mes: 9, anio: 2025, valor: 27.73 },
+            { mes: 10, anio: 2025, valor: 28.29 },
+            { mes: 11, anio: 2025, valor: 28.76 },
+            { mes: 12, anio: 2025, valor: 29.37 }
         ]
         this.fechaActual = DateTime.now();
         this.fechaInicio = DateTime.fromISO('2021-01-01');
@@ -60,7 +86,6 @@ class Actualizacion {
         this.fechaEntradaDesde = document.getElementById('from').value;
         this.fechaEntradaHasta = document.getElementById('to').value;
         this.importe = document.getElementById('amount').value;
-
         this.validarInformacion();
     }
 

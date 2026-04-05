@@ -14,7 +14,7 @@
   <link rel="shortcut icon" href="images/precio.png" type="image/x-icon">
   <title>Inmoflacy | Home</title>
   <script src="https://kit.fontawesome.com/cf2dcc4586.js" crossorigin="anonymous"></script>
-  
+
 
 </head>
 
@@ -23,32 +23,39 @@
   <header class="d-flex justify-content-center w-100 ">
     <nav class="d-flex flex-row justify-content-end align-items-center col-10">
       <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 d-flex justify-content-start mt-2">
-        <a href="index.html"><img class="ms-xxl-5 ms-xl-5 ms-lg-5 ms-1" src="images/logo.png" alt="imagen de logo" width="220"></a>
+        <a href="index.html"><img class="ms-xxl-5 ms-xl-5 ms-lg-5 ms-1" src="images/logo.png" alt="imagen de logo"
+            width="220"></a>
       </div>
       <button class="btn__open"><i class="fa-solid fa-ellipsis-vertical"></i></button>
       <div class="div__container--list col-xxl-6 col-xl-6 col-lg-6 ">
-      <button class="btn__close"><i class="fa-solid fa-ellipsis"></i></button>
-      <ul class="nav__list d-flex justify-content-xxl-between justify-content-xl-between justify-content-lg-between me-xl-4 me-lg-4 me-xxl-4 p-0">
-        <li class=""><a class="text-decoration-none fw-xxl-bold fw-xl-bold fw-lg-bold fw-semibold" href="html/howitworks.html">¿Como funciona?</a></li>
-        <li class=""><a class="text-decoration-none fw-xxl-bold fw-xl-bold fw-lg-bold fw-semibold" href="html/contact.html">Contacto</a></li>
-        <li class=""><a class="text-decoration-none fw-xxl-bold fw-xl-bold fw-lg-bold fw-semibold" href="html/indices.html">Registros</a></li>
-      </ul>
-    </div>
+        <button class="btn__close"><i class="fa-solid fa-ellipsis"></i></button>
+        <ul
+          class="nav__list d-flex justify-content-xxl-between justify-content-xl-between justify-content-lg-between me-xl-4 me-lg-4 me-xxl-4 p-0">
+          <li class=""><a class="text-decoration-none fw-xxl-bold fw-xl-bold fw-lg-bold fw-semibold"
+              href="html/howitworks.html">¿Como funciona?</a></li>
+          <li class=""><a class="text-decoration-none fw-xxl-bold fw-xl-bold fw-lg-bold fw-semibold"
+              href="html/indices.html">Registros</a></li>
+          <li class=""><a class="text-decoration-none fw-xxl-bold fw-xl-bold fw-lg-bold fw-semibold"
+              href="html/login.html">Login</a></li>
+        </ul>
+      </div>
     </nav>
-    
+
   </header>
-  
+
   <main>
     <div class="d-xxl-flex d-xl-flex d-lg-flex justify-content-center grid__container w-100">
       <img class="ms-2 mt-5 pt-5 grid__container--img img_fluid" src="images/imgindex.png" width="480"
         alt="imagen en contexto a la página" data-aos="fade-right" data-aos-duration="1200">
       <div
-        class="col-xxl-6 col-xl-6 col-lg-6 col-md-10 col-sm-11 col-12 d-flex flex-column align-items-center grid__container--div" data-aos="fade-up" data-aos-duration="1200">
+        class="col-xxl-6 col-xl-6 col-lg-6 col-md-10 col-sm-11 col-12 d-flex flex-column align-items-center grid__container--div"
+        data-aos="fade-up" data-aos-duration="1200">
         <h1 class="pt-5">Calculá tu nueva tarifa</h1>
         <p class="pt-3 m-0 col-10 text-center">Te ayudamos a calcular la actualización aproximada de tu locación.</p>
         <p class="text-center col-10">Para que podamos estimar tu valor al mes corriente, ingresá la fecha de tu último
           ajuste
-          o en el caso que aún no hayas cumplido un año, el mes de inicio de contrato. <b>Recordá que nuestros datos son a partir del 2021.</b></p>
+          o en el caso que aún no hayas cumplido un año, el mes de inicio de contrato. <b>Recordá que nuestros datos son
+            a partir del 2021.</b></p>
 
         <a href="html/howitworks.html" class="btn btn-warning btn-lg fw-bold rounded-4 mt-3">¿Tienes dudas?</a>
 
@@ -62,39 +69,42 @@
           </div>
           <div
             class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-10 col-12 mt-xxl-0 mt-xl-0 mt-lg-0 mt-md-0 mt-sm-5 mt-5">
-            <h4 >Hasta</h4>
+            <h4>Hasta</h4>
             <div class="div__container--secondaryDate d-flex justify-content-center">
               <input type="date" class="col-8 rounded-pill text-center shadow" required="" value="" id="to">
+            </div>
+            <p id="errorTo" class="p__message mt-2 fw-bold"></p>
           </div>
-          <p id="errorTo" class="p__message mt-2 fw-bold"></p>
-        </div>
-        <div class="div__container--amount mt-5 ">
-          <h4 class="text-center">Importe</h4>
-          <input type="number" required="" placeholder="Monto Mensual" class="col-12 rounded-pill text-center shadow" id="amount">
-          <p id="errorAmount" class="p__message mt-2 fw-bold"></p>
-          <button class="btn rounded-4 mt-2 fw-semibold btn-warning button__apply fs-4"><i
-            class="fa-solid fa-check"></i></button>
+          <div class="div__container--amount mt-5 ">
+            <h4 class="text-center">Importe</h4>
+            <input type="number" required="" placeholder="Monto Mensual" class="col-12 rounded-pill text-center shadow"
+              id="amount">
+            <p id="errorAmount" class="p__message mt-2 fw-bold"></p>
+            <button class="btn rounded-4 mt-2 fw-semibold btn-warning button__apply fs-4"><i
+                class="fa-solid fa-check"></i></button>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="d-flex justify-content-center div__container--popUp align-items-center hidden">
-      <div class="div__container--card-popUp rounded-4 d-flex flex-wrap col-xxl-5 col-xl-5 col-lg-5 col-md-7 col-sm-10 col-11 shadow-lg">
+      <div class="d-flex justify-content-center div__container--popUp align-items-center hidden">
+        <div
+          class="div__container--card-popUp rounded-4 d-flex flex-wrap col-xxl-5 col-xl-5 col-lg-5 col-md-7 col-sm-10 col-11 shadow-lg">
           <div class="d-flex justify-content-end col-12 mt-3">
-          <button class="btn__popUp-close rounded-circle me-3 shadow"><i class="fa-solid fa-xmark "></i></button>
+            <button class="btn__popUp-close rounded-circle me-3 shadow"><i class="fa-solid fa-xmark "></i></button>
           </div>
           <h3 class="col-12 text-center mb-0 pb-1">Hemos calculado tu nueva tarifa!</h3>
           <div class="d-flex col-12 justify-content-evenly">
-              <h2 class="text-end col-6 align-self-end me-5 amount"></h2>
-              <img class=" col-2 img-fluid" src="images/inflacion1.png" alt="imagen de una casa animada" width="200">
+            <h2 class="text-end col-6 align-self-end me-5 amount"></h2>
+            <img class=" col-2 img-fluid" src="images/inflacion1.png" alt="imagen de una casa animada" width="200">
           </div>
-          <p class="text-center col-12 mb-5 ps-4 pe-4 mt-3">(Recuerda consultar con tu asesor inmobiliario, nuestro servicio brinda importes
-              aproximados.)</p>
+          <p class="text-center col-12 mb-5 ps-4 pe-4 mt-3">(Recuerda consultar con tu asesor inmobiliario, nuestro
+            servicio brinda importes
+            aproximados.)</p>
+        </div>
       </div>
-  </div>
 
   </main>
 
-  
+
 
   <div class="d-flex justify-content-center">
     <div class="div__container-dividier rounded-pill shadow-lg"></div>
@@ -110,11 +120,15 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
     crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/luxon@3.4.3/build/global/luxon.min.js"></script>
-    <script src="js/events.js"></script>
-    <script src="js/class-update.js"></script>
-    <script src="js/main.js"></script>
-    
+  <script src="https://cdn.jsdelivr.net/npm/luxon@3.4.3/build/global/luxon.min.js"></script>
+
+<script>
+  const DateTime = luxon.DateTime;
+</script>
+  <script src="js/events.js"></script>
+  <script src="js/class-update.js"></script>
+  <script src="js/main.js"></script>
+
 </body>
 
 </html>

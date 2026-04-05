@@ -90,7 +90,7 @@ h4{
     text-shadow:  10px 7px 19px rgba(36, 0, 0, 1);
 }
 p{font-size: 17px;}
-.p__message{color: rgb(244, 44, 13); font-size: 17px;}
+.p__message{color: rgb(244, 44, 13); font-size: 17px; }
 .grid__container{
     display: grid;
   grid-template-areas:
@@ -124,10 +124,16 @@ footer{
     background-color: rgba(43, 42, 42, 0.959);
     
 }
+
 .div__container--contact-title{
     backdrop-filter: blur(7px) saturate(9%);
     -webkit-backdrop-filter: blur(7px) saturate(9%);
     background-color: rgba(95, 16, 232, 0.834); padding-top: 20px; padding-bottom: 40px;}
+
+.div__container--register-title{
+    backdrop-filter: blur(7px) saturate(9%);
+    -webkit-backdrop-filter: blur(7px) saturate(9%);
+    background-color: rgba(244, 157, 17, 0.834); padding-top: 20px; padding-bottom: 40px;}    
 
 form{
     transform: translate(0px,-30px);
